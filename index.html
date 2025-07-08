@@ -2,142 +2,308 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Click Clique</title>
   <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #fff6f9, #ffeef5);
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      line-height: 1.6;
+      font-size: 16px;
     }
-    header, section {
-      padding: 60px 20px;
-      max-width: 900px;
+    a {
+      color: #9c3b5e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #6a2340;
+      outline: none;
+      text-decoration: underline;
+    }
+    /* Container */
+    .container {
+      max-width: 960px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
+    /* Header */
     header {
-      background-color: #fceff3;
+      background-color: #f8f0f3;
+      padding: 60px 20px;
       text-align: center;
+      border-bottom: 1px solid #e0d5da;
     }
     header img {
-      max-width: 120px;
-      margin-bottom: 20px;
+      max-width: 100px;
+      margin-bottom: 24px;
+      filter: grayscale(20%) contrast(90%);
     }
     header h1 {
-      font-size: 2.5rem;
-      color: #d35d88;
+      font-weight: 700;
+      font-size: 2.75rem;
+      color: #7a2f4d;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      line-height: 1.1;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.125rem;
       color: #555;
+      margin-bottom: 32px;
+      font-style: italic;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
     }
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      background-color: #d35d88;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 14px 36px;
+      background-color: #7a2f4d;
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 8px rgba(122, 47, 77, 0.3);
+      text-transform: uppercase;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
-    section h2 {
-      color: #d35d88;
+    .btn:hover,
+    .btn:focus {
+      background-color: #5b2140;
+      box-shadow: 0 6px 14px rgba(91, 33, 64, 0.5);
+      outline: none;
+    }
+    /* Section Titles */
+    h2 {
+      font-size: 2rem;
+      color: #7a2f4d;
+      border-bottom: 2px solid #d6a0af;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    /* Bio Section */
+    .bio p {
+      max-width: 720px;
+      margin: 0 auto 32px auto;
+      font-size: 1.1rem;
+      color: #444;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .bio img {
+      display: block;
+      max-width: 220px;
+      width: 100%;
+      border-radius: 12px;
+      margin: 0 auto;
+      box-shadow: 0 6px 15px rgba(122, 47, 77, 0.2);
+      object-fit: cover;
+    }
+    /* About Section */
+    section.about p {
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.75;
+    }
+    /* Services */
+    .services ul {
+      list-style-type: none;
+      padding-left: 0;
+      max-width: 720px;
+      margin: 0 auto 40px auto;
     }
     .services li {
-      margin-bottom: 12px;
+      background: #fff;
+      border: 1px solid #d6a0af;
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      color: #5b2140;
+      box-shadow: 0 3px 8px rgba(183, 138, 156, 0.2);
+      transition: box-shadow 0.3s ease;
     }
-    .bio img, .services img {
-      max-width: 100%;
-      border-radius: 16px;
-      margin-top: 20px;
+    .services li:hover {
+      box-shadow: 0 6px 18px rgba(122, 47, 77, 0.4);
     }
-    .contact a {
+    .services img {
       display: block;
-      margin: 8px 0;
-      text-decoration: none;
-      color: #d35d88;
-    }
-    .testimonials {
-      background-color: #fef3f7;
-      padding: 40px 20px;
+      max-width: 100%;
+      margin: 0 auto;
       border-radius: 16px;
-      margin-top: 40px;
+      box-shadow: 0 6px 20px rgba(122, 47, 77, 0.15);
+    }
+    /* Testimonials */
+    .testimonials {
+      background-color: #f4e9ed;
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 720px;
+      margin: 0 auto 60px auto;
+      box-shadow: 0 8px 24px rgba(122, 47, 77, 0.12);
     }
     .testimonial {
-      margin-bottom: 20px;
       font-style: italic;
-      color: #555;
+      color: #5a404d;
+      margin-bottom: 28px;
+      position: relative;
+      padding-left: 24px;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 3rem;
+      color: #a8657a;
+      position: absolute;
+      left: 0;
+      top: -8px;
+      font-weight: 900;
+      line-height: 1;
     }
     .testimonial strong {
       display: block;
-      margin-top: 8px;
-      color: #d35d88;
+      margin-top: 12px;
+      font-weight: 700;
+      color: #7a2f4d;
+      font-style: normal;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    footer {
-      background-color: #fceff3;
+    /* Contact */
+    .contact p {
+      max-width: 720px;
+      margin: 0 auto 20px auto;
+      font-size: 1.1rem;
+      color: #444;
       text-align: center;
-      padding: 20px;
+      line-height: 1.5;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 0 12px 12px 12px;
+      padding: 12px 28px;
+      background-color: #7a2f4d;
+      color: #fff;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(122, 47, 77, 0.3);
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      min-width: 140px;
+      text-align: center;
+      font-size: 1rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .contact a:hover,
+    .contact a:focus {
+      background-color: #5b2140;
+      box-shadow: 0 6px 18px rgba(91, 33, 64, 0.5);
+      outline: none;
+    }
+    /* Footer */
+    footer {
+      background-color: #f8f0f3;
+      text-align: center;
+      padding: 18px 20px;
+      color: #7a2f4d;
+      font-weight: 600;
       font-size: 0.9rem;
+      border-top: 1px solid #e0d5da;
+      letter-spacing: 0.05em;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .btn,
+      .contact a {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-width: auto;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="IMG_20250706_184332_895.webp" alt="Click Clique Logo">
+    <img src="IMG_20250706_184332_895.webp" alt="Click Clique Logo" />
     <h1>Chic, Affordable Websites for Bold Brands</h1>
-    <p>Helping women entrepreneurs glow online with confidence and style 💻✨</p>
-    <a href="https://wa.me/27611225500" class="btn">Let’s Work Together</a>
+    <p>Helping women entrepreneurs glow online with confidence and style.</p>
+    <a href="https://wa.me/27611225500" class="btn" aria-label="Contact Click Clique on WhatsApp">Let’s Work Together</a>
   </header>
 
-  <section class="bio">
-    <h2>Meet the Founder</h2>
-    <p>Hey! I'm <strong>Liyah</strong>, the heart behind <strong>Click Clique</strong>. I started this design studio to help women-owned businesses feel confident online through simple, chic, and functional websites.</p>
-    <img src="Snapchat-1117735862.jpg" alt="Founder Photo">
-  </section>
+  <main class="container">
+    <section class="bio" aria-labelledby="bio-title">
+      <h2 id="bio-title">Meet the Founder</h2>
+      <p>Hey! I'm <strong>Liyah</strong>, the heart behind <strong>Click Clique</strong>. I started this design studio to help women-owned businesses feel confident online through simple, chic, and functional websites.</p>
+      <img src="Snapchat-1117735862.jpg" alt="Photo of Liyah, founder of Click Clique" />
+    </section>
 
-  <section>
-    <h2>About Click Clique</h2>
-    <p>Click Clique is a boutique web design brand that offers soft, clean, and feminine website solutions for small businesses and creatives. We blend minimalism with bold personality to help your brand shine online.</p>
-  </section>
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Click Clique</h2>
+      <p>Click Clique is a boutique web design brand that offers soft, clean, and feminine website solutions for small businesses and creatives. We blend minimalism with bold personality to help your brand shine online.</p>
+    </section>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li><strong>Starter:</strong> A stylish one-page site perfect for new launches and service showcases.</li>
-      <li><strong>Deluxe:</strong> A multi-page site to share your story, services, and visuals with elegance.</li>
-      <li><strong>Luxe:</strong> A full website experience with custom features and extended support.</li>
-    </ul>
-    <img src="https://via.placeholder.com/800x400.png?text=Service+Preview" alt="Website Services Preview">
-  </section>
+    <section class="services" aria-labelledby="services-title">
+      <h2 id="services-title">Our Services</h2>
+      <ul>
+        <li><strong>Starter:</strong> A stylish one-page site perfect for new launches and service showcases.</li>
+        <li><strong>Deluxe:</strong> A multi-page site to share your story, services, and visuals with elegance.</li>
+        <li><strong>Luxe:</strong> A full website experience with custom features and extended support.</li>
+      </ul>
+      <img src="https://via.placeholder.com/800x400.png?text=Service+Preview" alt="Preview of Website Services" />
+    </section>
 
-  <section class="testimonials">
-    <h2>What Clients Say</h2>
-    <div class="testimonial">
-      “Click Clique made my brand look like a dream! I finally feel confident sending people to my website.”
-      <strong>– Zara M.</strong>
-    </div>
-    <div class="testimonial">
-      “Liyah understood exactly what I wanted — clean, feminine, and professional. The process was so smooth.”
-      <strong>– Tasha R.</strong>
-    </div>
-    <div class="testimonial">
-      “I got the Luxe package and it was worth every cent. I love how everything flows and matches my brand.”
-      <strong>– Kayla S.</strong>
-    </div>
-  </section>
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title">What Clients Say</h2>
+      <blockquote class="testimonial">
+        Click Clique made my brand look like a dream! I finally feel confident sending people to my website.
+        <strong>– Zara M.</strong>
+      </blockquote>
+      <blockquote class="testimonial">
+        Liyah understood exactly what I wanted — clean, feminine, and professional. The process was so smooth.
+        <strong>– Tasha R.</strong>
+      </blockquote>
+      <blockquote class="testimonial">
+        I got the Luxe package and it was worth every cent. I love how everything flows and matches my brand.
+        <strong>– Kayla S.</strong>
+      </blockquote>
+    </section>
 
-  <section class="contact">
-    <h2>Let’s Connect</h2>
-    <p>Have a question or ready to start? Let’s bring your dream site to life ✨</p>
-    <a href="mailto:yalasouthafrica5@gmail.com">📧 Email Me</a>
-    <a href="https://wa.me/27611225500">📱 WhatsApp</a>
-    <a href="https://www.instagram.com/click_cliquue">📸 Instagram</a>
-  </section>
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Let’s Connect</h2>
+      <p>Have a question or ready to start? Let’s bring your dream site to life.</p>
+      <a href="mailto:yalasouthafrica5@gmail.com" aria-label="Send email to Liyah">📧 Email Me</a>
+      <a href="https://wa.me/27611225500" aria-label="Chat with Liyah on WhatsApp">📱 WhatsApp</a>
+      <a href="https://www.instagram.com/click_cliquue" aria-label="Visit Click Clique Instagram">📸 Instagram</a>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Click Clique | Designed by Liyah
   </footer>
+
 </body>
 </html>
