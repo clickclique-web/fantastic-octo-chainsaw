@@ -12,250 +12,270 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fafafa;
-      color: #222;
+      background-color: #faf7fb;
+      color: #3b2a3a;
       line-height: 1.6;
       font-size: 16px;
       scroll-behavior: smooth;
     }
     a {
-      color: #7a2f4d;
+      color: #a63f6e;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     a:hover,
     a:focus {
-      color: #5b2140;
+      color: #7e2b51;
       outline: none;
       text-decoration: underline;
     }
-
     /* Layout wrapper */
     .wrapper {
       max-width: 720px;
       margin: 0 auto;
       padding: 40px 20px;
     }
-
     /* Hero/Header */
     header {
       text-align: center;
       padding: 80px 20px 60px;
-      background: #f8f0f3;
+      background: #f9eff5;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(122, 47, 77, 0.1);
+      box-shadow: 0 6px 20px rgba(166, 63, 110, 0.1);
       margin-bottom: 60px;
     }
     header img {
       max-width: 100px;
       margin-bottom: 24px;
-      filter: grayscale(20%) contrast(90%);
+      filter: grayscale(15%) contrast(90%);
     }
     header h1 {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 2.75rem;
-      color: #7a2f4d;
+      color: #a63f6e;
       margin-bottom: 16px;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       line-height: 1.1;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
     }
     header p {
-      font-size: 1.125rem;
-      color: #555;
+      font-size: 1.25rem;
+      color: #5a4051;
       margin: 0 auto 32px;
-      max-width: 480px;
+      max-width: 500px;
       font-style: italic;
+      font-weight: 600;
       line-height: 1.4;
     }
     .btn {
       display: inline-block;
-      padding: 14px 36px;
-      background-color: #7a2f4d;
+      padding: 16px 42px;
+      background-color: #a63f6e;
       color: #fff;
       border-radius: 50px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      box-shadow: 0 4px 8px rgba(122, 47, 77, 0.3);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      box-shadow: 0 5px 15px rgba(166, 63, 110, 0.4);
       text-transform: uppercase;
       cursor: pointer;
       user-select: none;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.1rem;
+      box-shadow:
+        0 0 5px #a63f6e,
+        0 0 15px #f9b4d2,
+        0 0 30px #f9b4d2;
     }
     .btn:hover,
     .btn:focus {
-      background-color: #5b2140;
-      box-shadow: 0 6px 14px rgba(91, 33, 64, 0.5);
+      background-color: #7e2b51;
+      box-shadow: 0 8px 22px rgba(126, 43, 81, 0.7);
       outline: none;
+      transform: scale(1.05);
     }
-
     /* Section styling */
     section {
       margin-bottom: 60px;
       background: #fff;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(122, 47, 77, 0.05);
+      padding: 42px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(166, 63, 110, 0.05);
       position: relative;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     section h2 {
-      font-size: 2rem;
-      color: #7a2f4d;
-      font-weight: 700;
+      font-size: 2.25rem;
+      color: #a63f6e;
+      font-weight: 800;
       margin-bottom: 28px;
-      letter-spacing: 0.05em;
-      border-bottom: 2px solid #d6a0af;
-      padding-bottom: 10px;
+      letter-spacing: 0.1em;
+      border-bottom: 3px solid #f9b4d2;
+      padding-bottom: 12px;
       text-transform: uppercase;
-      max-width: max-content;
+      font-family: 'Georgia', serif;
     }
-
-    /* Meet the Founder - no photo, styled like card */
+    /* Meet the Founder */
     .bio p {
-      font-size: 1.125rem;
-      color: #444;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.5;
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    /* About */
-    section.about p {
-      font-size: 1.1rem;
-      color: #444;
+      font-size: 1.2rem;
+      color: #5a4051;
       max-width: 640px;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.6;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-align: center;
     }
-
+    /* About */
+    section.about p {
+      font-size: 1.15rem;
+      color: #5a4051;
+      max-width: 660px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
     /* Services */
     .services ul {
       list-style: none;
       padding-left: 0;
-      max-width: 640px;
+      max-width: 660px;
       margin: 0 auto 40px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
     }
     .services li {
-      background: #f8f0f3;
-      border-radius: 12px;
-      padding: 24px 20px;
-      color: #5b2140;
-      font-weight: 600;
-      box-shadow: 0 3px 10px rgba(183, 138, 156, 0.15);
-      transition: box-shadow 0.3s ease;
-      border: 1px solid transparent;
+      background: #fde9f2;
+      border-radius: 16px;
+      padding: 28px 24px;
+      color: #7e2b51;
+      font-weight: 700;
+      box-shadow: 0 5px 18px rgba(249, 180, 210, 0.5);
+      border: 1.5px solid #f9b4d2;
       cursor: default;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      user-select: none;
+      position: relative;
     }
     .services li:hover {
-      box-shadow: 0 6px 20px rgba(122, 47, 77, 0.3);
-      border-color: #d6a0af;
-      background: #fff0f5;
+      box-shadow: 0 12px 30px rgba(166, 63, 110, 0.7);
+      border-color: #a63f6e;
+      background: #f9d4e3;
+      transform: translateY(-4px);
     }
-
+    .services li::before {
+      content: "💎";
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: 1.3rem;
+    }
     /* Testimonials */
     .testimonials {
-      max-width: 640px;
+      max-width: 660px;
       margin: 0 auto;
-      background-color: #f4e9ed;
-      border-radius: 12px;
-      padding: 40px 30px;
-      box-shadow: 0 8px 24px rgba(122, 47, 77, 0.12);
+      background-color: #f9eff5;
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 8px 30px rgba(166, 63, 110, 0.15);
+      font-style: italic;
+      color: #6b4a64;
+      font-size: 1.125rem;
+      line-height: 1.65;
     }
     .testimonial {
-      font-style: italic;
-      color: #5a404d;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
       position: relative;
-      padding-left: 30px;
-      font-size: 1.1rem;
-      line-height: 1.5;
+      padding-left: 36px;
+      font-weight: 600;
     }
     .testimonial::before {
-      content: "“";
-      font-size: 3rem;
-      color: #a8657a;
+      content: "❝";
+      font-size: 3.5rem;
+      color: #f9b4d2;
       position: absolute;
       left: 0;
-      top: -8px;
+      top: -12px;
       font-weight: 900;
       line-height: 1;
+      font-family: 'Georgia', serif;
     }
     .testimonial strong {
       display: block;
-      margin-top: 12px;
+      margin-top: 16px;
       font-weight: 700;
-      color: #7a2f4d;
+      color: #a63f6e;
       font-style: normal;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      font-family: 'Georgia', serif;
     }
-
     /* Contact */
     .contact p {
-      font-size: 1.125rem;
-      color: #444;
-      max-width: 600px;
-      margin: 0 auto 28px;
+      font-size: 1.25rem;
+      color: #5a4051;
+      max-width: 640px;
+      margin: 0 auto 36px;
       text-align: center;
+      font-weight: 600;
       line-height: 1.5;
     }
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 24px;
+      gap: 28px;
       flex-wrap: wrap;
     }
     .contact-links a {
-      background-color: #7a2f4d;
+      background-color: #a63f6e;
       color: #fff;
-      padding: 14px 30px;
-      border-radius: 30px;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(122, 47, 77, 0.3);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(166, 63, 110, 0.5);
       text-decoration: none;
-      font-size: 1rem;
-      min-width: 140px;
+      font-size: 1.1rem;
+      min-width: 160px;
       text-align: center;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
       cursor: pointer;
       user-select: none;
-      display: inline-block;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .contact-links a:hover,
     .contact-links a:focus {
-      background-color: #5b2140;
-      box-shadow: 0 6px 18px rgba(91, 33, 64, 0.5);
+      background-color: #7e2b51;
+      box-shadow: 0 10px 30px rgba(126, 43, 81, 0.7);
       outline: none;
+      transform: scale(1.05);
     }
-
     /* Footer */
     footer {
       text-align: center;
       padding: 28px 20px;
-      color: #7a2f4d;
-      font-weight: 600;
+      color: #a63f6e;
+      font-weight: 700;
       font-size: 0.9rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.07em;
       user-select: none;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
     }
-
     /* Responsive */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
       }
       section h2 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
       }
       .btn,
       .contact-links a {
-        padding: 12px 20px;
-        font-size: 0.9rem;
+        padding: 14px 24px;
+        font-size: 1rem;
         min-width: auto;
       }
       .services ul {
@@ -266,53 +286,53 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <div class="wrapper" role="main">
     <header>
       <img src="IMG_20250706_184332_895.webp" alt="Click Clique Logo" />
-      <h1>Chic, Affordable Websites for Bold Brands</h1>
-      <p>Helping women entrepreneurs glow online with confidence and style.</p>
-      <a href="https://wa.me/27611225500" class="btn" aria-label="Contact Click Clique on WhatsApp">Let’s Work Together</a>
+      <h1>CHIC, AFFORDABLE WEBSITES FOR BOLD BRANDS ✨</h1>
+      <p>Helping young women entrepreneurs shine online with confidence, style, and unstoppable energy 💖🚀</p>
+      <a href="https://wa.me/27611225500" class="btn" aria-label="Contact Click Clique on WhatsApp">LET’S WORK TOGETHER 💼</a>
     </header>
 
     <main>
       <section class="bio" aria-labelledby="bio-title">
-        <h2 id="bio-title">Meet the Founder</h2>
-        <p>Hey! I'm <strong>Liyah</strong>, the heart behind <strong>Click Clique</strong>. I started this design studio to help women-owned businesses feel confident online through simple, chic, and functional websites.</p>
+        <h2 id="bio-title">MEET THE FOUNDER 👑</h2>
+        <p>Hey! I'm <strong>Liyah</strong>, the creative force behind <strong>Click Clique</strong>. I empower women-owned startups and creatives to build stunning, sleek websites that speak boldness and brilliance — because your brand deserves to SLAY online! 💅✨</p>
       </section>
 
       <section class="about" aria-labelledby="about-title">
-        <h2 id="about-title">About Click Clique</h2>
-        <p>Click Clique is a boutique web design brand that offers soft, clean, and feminine website solutions for small businesses and creatives. We blend minimalism with bold personality to help your brand shine online.</p>
+        <h2 id="about-title">ABOUT CLICK CLIQUE 💻</h2>
+        <p><strong>Click Clique</strong> is a boutique web design studio dedicated to crafting feminine, fresh, and functional websites tailored for young women entrepreneurs and creatives. We mix minimalism with personality to help you own your digital presence and conquer your niche. Ready to glow up? 🌟</p>
       </section>
 
       <section class="services" aria-labelledby="services-title">
-        <h2 id="services-title">Our Services</h2>
+        <h2 id="services-title">OUR SERVICES 💎</h2>
         <ul>
-          <li><strong>Starter:</strong> A stylish one-page site perfect for new launches and service showcases.</li>
-          <li><strong>Deluxe:</strong> A multi-page site to share your story, services, and visuals with elegance.</li>
-          <li><strong>Luxe:</strong> A full website experience with custom features and extended support.</li>
+          <li><strong>Starter:</strong> A stylish one-page site perfect for launching your dream or showcasing your services.</li>
+          <li><strong>Deluxe:</strong> A multi-page site designed to tell your unique story and showcase your offerings with flair.</li>
+          <li><strong>Luxe:</strong> The ultimate website experience — custom features, extended support, and a brand presence that dazzles.</li>
         </ul>
       </section>
 
       <section class="testimonials" aria-labelledby="testimonials-title">
-        <h2 id="testimonials-title">What Clients Say</h2>
+        <h2 id="testimonials-title">WHAT CLIENTS SAY 💬</h2>
         <blockquote class="testimonial">
-          Click Clique made my brand look like a dream! I finally feel confident sending people to my website.
+          Click Clique transformed my brand’s online look — now I’m proud to send people to my website! 💖
           <strong>– Zara M.</strong>
         </blockquote>
         <blockquote class="testimonial">
-          Liyah understood exactly what I wanted — clean, feminine, and professional. The process was so smooth.
+          Liyah knew exactly how to bring my vision to life: clean, feminine, and professional. The process was smooth and fun! 🎉
           <strong>– Tasha R.</strong>
         </blockquote>
         <blockquote class="testimonial">
-          I got the Luxe package and it was worth every cent. I love how everything flows and matches my brand.
+          The Luxe package was worth every cent. My site flows beautifully and matches my brand perfectly. ✨
           <strong>– Kayla S.</strong>
         </blockquote>
       </section>
 
       <section class="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Let’s Connect</h2>
-        <p>Have a question or ready to start? Let’s bring your dream site to life.</p>
+        <h2 id="contact-title">LET’S CONNECT 🤝</h2>
+        <p>Got questions or ready to launch your dream site? Let’s make magic happen together! 💫</p>
         <div class="contact-links">
           <a href="mailto:yalasouthafrica5@gmail.com" aria-label="Send email to Liyah">📧 Email Me</a>
           <a href="https://wa.me/27611225500" aria-label="Chat with Liyah on WhatsApp">📱 WhatsApp</a>
@@ -322,7 +342,7 @@
     </main>
 
     <footer>
-      &copy; 2025 Click Clique | Designed by Liyah
+      &copy; 2025 CLICK CLIQUE | DESIGNED BY LIYAH ✨
     </footer>
   </div>
 
