@@ -11,10 +11,40 @@
       color: #333;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff0f2;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+    nav a {
+      color: #d47272;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #fce4e4;
+      border-radius: 5px;
     }
     .section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .button {
       display: inline-block;
@@ -25,25 +55,26 @@
       text-decoration: none;
       border-radius: 10px;
       font-weight: 500;
-      transition: background 0.3s ease;
+      box-shadow: 0 4px 10px rgba(223, 164, 164, 0.3);
+      transition: 0.3s ease;
     }
     .button:hover {
-      background: #c08f8f;
+      transform: scale(1.05);
+      background: #c98c8c;
+      box-shadow: 0 6px 15px rgba(223, 164, 164, 0.5);
     }
     h1, h2 {
       color: #d47272;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      font-size: 16px;
-      line-height: 1.8;
     }
     .mockups img {
       max-width: 90%;
       border-radius: 15px;
       margin: 12px 0;
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+    .mockups img:hover {
+      transform: scale(1.02);
     }
     .testimonial {
       margin: 20px auto;
@@ -51,9 +82,25 @@
       font-style: italic;
       color: #666;
     }
-    .bio {
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid #f0dada;
+      text-align: left;
+    }
+    th {
+      background: #ffeaea;
+      color: #a85555;
+    }
+    .bio, .about {
       background: #fff2f5;
-      padding-bottom: 60px;
     }
     .footer {
       font-size: 0.9em;
@@ -65,8 +112,18 @@
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#mockups">Mockups</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <!-- Hero -->
-  <div class="section" style="background: #ffeaea;">
+  <div class="section" id="home" style="background: #ffeaea;">
     <h1>Click Clique</h1>
     <p>Your all-in-one web design studio for sleek, mobile-first websites and bossed-up branding.</p>
     <a class="button" href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
@@ -74,41 +131,78 @@
   </div>
 
   <!-- Services -->
-  <div class="section">
-    <h2>Website Design Services</h2>
+  <div class="section" id="services">
+    <h2>Our Services</h2>
     <p>We design modern, mobile-optimized websites tailored to your brand.</p>
-    <ul>
-      <li>✅ Fully responsive websites (mobile + desktop ready)</li>
-      <li>✅ Custom branding to match your style</li>
-      <li>✅ Homepage, About, Services, Gallery & Contact Pages</li>
-      <li>✅ Direct WhatsApp or Email contact forms</li>
-    </ul>
-    <p><strong>Add-ons Available:</strong></p>
-    <ul>
-      <li>🎯 Social media content creation</li>
-      <li>📸 Canva brand kits or business card designs</li>
-      <li>💌 Email newsletter layout setup</li>
-    </ul>
+    <table>
+      <tr>
+        <th>Website Services</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Responsive Design</td>
+        <td>Mobile & desktop ready layouts</td>
+      </tr>
+      <tr>
+        <td>Custom Branding</td>
+        <td>Colors, fonts, layout to match your brand vibe</td>
+      </tr>
+      <tr>
+        <td>Multi-page Websites</td>
+        <td>Homepage, About, Services, Gallery & Contact</td>
+      </tr>
+      <tr>
+        <td>WhatsApp & Email Integration</td>
+        <td>Instant client contact forms</td>
+      </tr>
+    </table>
+
+    <h3>Add-Ons</h3>
+    <table>
+      <tr>
+        <th>Extras</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Social Media Content</td>
+        <td>Branded posts for IG, FB, TikTok</td>
+      </tr>
+      <tr>
+        <td>Canva Brand Kits</td>
+        <td>Editable templates for you or your team</td>
+      </tr>
+      <tr>
+        <td>Email Layouts</td>
+        <td>Gorgeous email designs ready to plug in</td>
+      </tr>
+    </table>
     <a class="button" href="mailto:yalasouthafrica5@gmail.com">Book a Consult</a>
   </div>
 
-  <!-- Mockups Showcase -->
-  <div class="section mockups" style="background: #fff7f8;">
+  <!-- Mockups -->
+  <div class="section mockups" id="mockups" style="background: #fff7f8;">
     <h2>Design Mockups</h2>
     <img src="Nailbar and Boutique.jpg" alt="Nailbar & Boutique Website Mockup" />
     <img src="E-commerce .jpg" alt="Purrfect Pets E-commerce Website Mockup" />
   </div>
 
-  <!-- Client Reviews -->
-  <div class="section">
-    <h2>What Clients Say</h2>
+  <!-- Reviews -->
+  <div class="section" id="reviews">
+    <h2>Client Reviews</h2>
     <div class="testimonial">“Professional, fast turnaround, and gave my brand exactly what it needed!” — Lindiwe M.</div>
     <div class="testimonial">“Click Clique made me feel seen as a business owner. My website is stunning!” — Rashaad D.</div>
   </div>
 
   <!-- About -->
-  <div class="section bio">
-    <p>Hi, I’m <strong>Liyah</strong> — a creative web designer and founder of Click Clique. I help small businesses transform their presence online with clean, scroll-stopping websites that speak directly to their dream clients. Ready to elevate your brand?</p>
+  <div class="section about" id="about">
+    <h2>About Click Clique</h2>
+    <p>Click Clique is a boutique web design studio built for creatives, go-getters, and bold brand builders. We focus on giving small businesses a big brand feel through clean, chic, mobile-first websites that leave a lasting impression.</p>
+  </div>
+
+  <!-- Founder's Message -->
+  <div class="section bio" id="contact">
+    <h2>Founder's Message</h2>
+    <p>Hi, I’m <strong>Liyah</strong> — a creative web designer and founder of Click Clique. I’m passionate about helping entrepreneurs show up online with confidence. Whether you're starting from scratch or upgrading your current site, my mission is to make your business feel elevated, empowered, and hella professional. Let's build something beautiful together.</p>
     <a class="button" href="https://wa.me/27611225500">WhatsApp Me</a>
     <a class="button" href="mailto:yalasouthafrica5@gmail.com">Email</a>
   </div>
@@ -117,6 +211,22 @@
   <div class="footer">
     <p>© 2025 Click Clique | Built with love in South Africa.</p>
   </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
