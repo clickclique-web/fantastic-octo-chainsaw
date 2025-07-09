@@ -136,9 +136,10 @@
       transform: scale(1.03);
     }
 
-    .testimonial {
-      max-width: 500px;
-      margin: 20px auto;
+    .testimonial-slide {
+      display: none;
+      max-width: 600px;
+      margin: 0 auto;
       font-style: italic;
       color: #aaa;
     }
@@ -161,6 +162,7 @@
     <a href="#designs">Designs</a>
     <a href="#reviews">Reviews</a>
     <a href="#about">About</a>
+    <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -204,8 +206,11 @@
   <!-- Reviews -->
   <div class="section" id="reviews">
     <h2>Client Reviews</h2>
-    <div class="testimonial">“Professional, fast turnaround, and gave my brand exactly what it needed!” — Lindiwe M.</div>
-    <div class="testimonial">“Click Clique made me feel seen as a business owner. My website is stunning!” — Rashaad D.</div>
+    <div id="testimonial-carousel">
+      <div class="testimonial-slide">“Click Clique made my website GORGEOUS. I felt heard + empowered!” — Sarah T.</div>
+      <div class="testimonial-slide">“The communication, the branding, the delivery — 10/10.” — Zee K.</div>
+      <div class="testimonial-slide">“It’s giving professional but still me. Obsessed.” — Lerato N.</div>
+    </div>
   </div>
 
   <!-- About -->
@@ -214,18 +219,37 @@
     <p>Click Clique is your digital design partner with personality. Built for creators, coaches, and bold small biz owners, we mix sleek layout with scroll-stopping energy to build websites that convert and captivate.</p>
   </div>
 
+  <!-- Blog -->
+  <div class="section" id="blog">
+    <h2>💡 From the Blog</h2>
+    <div class="grid">
+      <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
+        <h3 style="color:#ffb6c1;">3 Things Your Website *Must* Have to Convert in 2025</h3>
+        <p style="color:#ccc;">Your site isn’t just a vibe — it should sell for you. Let’s break down what actually makes your website *work*.</p>
+        <a class="button" href="#">Read More</a>
+      </div>
+      <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
+        <h3 style="color:#ffb6c1;">Choosing Fonts That Actually Match Your Brand Energy</h3>
+        <p style="color:#ccc;">Fonts are your visual voice. Let’s choose ones that slay and stay on brand — no font flops here.</p>
+        <a class="button" href="#">Read More</a>
+      </div>
+      <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
+        <h3 style="color:#ffb6c1;">Why Mobile-First Design Is a Non-Negotiable</h3>
+        <p style="color:#ccc;">If your site doesn’t slay on mobile, you’re leaving money on the table. Here’s why we build mobile-first every time.</p>
+        <a class="button" href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Contact -->
   <div class="section" id="contact">
     <h2>Founder's Message</h2>
     <p>Hey, I’m <strong>Liyah</strong> — a web designer with a soft spot for bold brands. I started Click Clique to help women (and stylish hustlers everywhere) build brands they’re proud of. Let’s make digital magic together.</p>
-
     <h3 style="margin-top: 40px;">📲 Let's Connect</h3>
     <p style="font-size: 18px;">Have a project in mind? Just hit me up on any of these:</p>
-
     <p>📸 <strong>Instagram:</strong> <a href="https://instagram.com/yourhandle" target="_blank" style="color: #ffb6c1;">@click_cliquue</a></p>
     <p>💌 <strong>Email:</strong> <a href="mailto:yalasouthafrica5@gmail.com" style="color: #ffb6c1;">yalasouthafrica5@gmail.com</a></p>
     <p>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/27611225500" target="_blank" style="color: #ffb6c1;">+27 61 122 5500</a></p>
-
     <p style="margin-top: 20px;"><a class="button" href="https://wa.me/27611225500" target="_blank">Send a WhatsApp</a></p>
   </div>
 
@@ -234,7 +258,7 @@
     <p>© 2025 Click Clique | Designed with love in South Africa</p>
   </div>
 
-  <!-- Animate on Scroll Script -->
+  <!-- Scroll animation -->
   <script>
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver(entries => {
@@ -247,5 +271,19 @@
     sections.forEach(section => observer.observe(section));
   </script>
 
+  <!-- Testimonial slider -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    function showSlide() {
+      slides.forEach(slide => slide.style.display = 'none');
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = 'block';
+      setTimeout(showSlide, 4000);
+    }
+    showSlide();
+  </script>
+
 </body>
-</html>
+                                                                                                                                        </html>
